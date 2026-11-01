@@ -1,2 +1,0 @@
-# blackprime
-blackprime.shop
