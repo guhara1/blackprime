@@ -1,0 +1,26 @@
+{
+ "name": "블랙프라임 출장마사지 홈타이",
+ "short_name": "블랙프라임",
+ "start_url": "/",
+ "display": "standalone",
+ "background_color": "#FFFFFF",
+ "theme_color": "#FFFFFF",
+ "lang": "ko",
+ "icons": [
+  {
+   "src": "/favicon.svg",
+   "sizes": "any",
+   "type": "image/svg+xml"
+  },
+  {
+   "src": "/assets/icon-180.png",
+   "sizes": "180x180",
+   "type": "image/png"
+  },
+  {
+   "src": "/assets/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  }
+ ]
+}
