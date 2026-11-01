@@ -9,7 +9,9 @@
      --t2 #555(7.5:1) · --t3 #6E6E6E(5.1:1 / 바탕에서 4.8:1) — 단계도 그대로 살았다. */
   --ink:#111111; --ink2:#3D3D3D; --t2:#555555; --t3:#6E6E6E;
   --line:#E8E8E8; --line2:#D8D8D8;
-  --gold:#C8961E; --gold-sf:#FBF4E4;
+  /* ★--gold 는 **장식 전용**(점·검은 바 위 아이콘). 밝은 바탕 글자에 쓰면 2.7:1 이라
+     마감검사가 잡는다 ⇒ 글자에는 --gold-ink(흰 면 5.5:1)만 쓴다. */
+  --gold:#C8961E; --gold-ink:#8A620C; --gold-sf:#FBF4E4;
   --r-s:8px; --r-m:12px; --r-l:16px; --r-pill:99999px;
   --sp:16px; --maxw:1100px; --bar:62px;
   --ff:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,
@@ -79,7 +81,7 @@ button{font:inherit;cursor:pointer;background:none;border:0}
 .sec__h{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 4px}
 .sec__h h2{margin:0;font-size:21px;font-weight:800;letter-spacing:-.05em;line-height:1.32}
 @media (min-width:881px){.sec__h h2{font-size:24px}}
-.sec__h h2 em{font-style:normal;color:var(--gold)}
+.sec__h h2 em{font-style:normal;color:var(--gold-ink)}
 .sec__h > a{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;
   width:34px;height:34px;color:var(--ink)}
 .sec__h > a svg{width:20px;height:20px}
@@ -104,7 +106,10 @@ button{font:inherit;cursor:pointer;background:none;border:0}
 .pg:hover .pg__img{transform:scale(1.03)}
 .pg__v{position:absolute;inset:0;background:linear-gradient(177deg,
   rgba(0,0,0,0) 44%,rgba(0,0,0,.52) 70%,rgba(0,0,0,.88) 100%)}
-.pg__b{position:absolute;left:0;right:0;bottom:0;padding:11px 12px 13px;color:#fff}
+/* ★글자 상자가 **스스로** 어두운 덮개를 갖게 둔다. 사진 위 흰 글씨라 실제로는 잘 보이는데,
+   덮개가 형제 요소에 있으면 검사기가 흰 바탕으로 거슬러 올라가 1.15:1 오탐을 낸다. */
+.pg__b{position:absolute;left:0;right:0;bottom:0;padding:16px 12px 13px;color:#fff;
+  background-image:linear-gradient(to top,rgba(0,0,0,.90),rgba(0,0,0,.62) 58%,rgba(0,0,0,0))}
 .pg__n{display:block;font-size:15px;font-weight:800;letter-spacing:-.04em;line-height:1.26}
 .pg__m{display:block;margin-top:4px;font-size:12px;font-weight:600;color:rgba(255,255,255,.82)}
 .pg__tag{position:absolute;top:9px;left:9px;background:rgba(255,255,255,.92);color:var(--ink);
@@ -140,7 +145,7 @@ button{font:inherit;cursor:pointer;background:none;border:0}
 .row__t{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
 .tag{font-size:11.5px;font-weight:600;color:var(--t2);background:var(--bg);
   border-radius:var(--r-pill);padding:3.5px 9px;letter-spacing:-.01em}
-.tag--g{color:var(--gold);background:var(--gold-sf)}
+.tag--g{color:var(--gold-ink);background:var(--gold-sf)}
 .row__go{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;
   width:34px;height:34px;color:var(--t3)}
 .row__go svg{width:18px;height:18px}
